@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
+import django_heroku
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-9b5)5=xvwg+ji0+2c3hdz+6984kl6d1@qr9@&=ss#roy1^@xfh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -50,9 +52,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'Blog.urls'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 TEMPLATES = [
     {
@@ -89,7 +93,9 @@ DATABASES = {
     }
 }
 
-
+DATABASES = {
+    'default':dj_database_url.config
+}
 
 # Password validation
 # https://docs.djangoproject.com/fr/4.0/ref/settings/#auth-password-validators
@@ -130,6 +136,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFIELS_DIRS=[
+    STATIC_URL =os.path.join(BASE_DIR, 'staticfiles')
     BASE_DIR /'static',
     ]
 
@@ -140,6 +147,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+django_heroku.settings(locals())
 
 LOGIN_REDIRECT_URL ='posts:index'
 LOGIN_URL = 'compte:login'
