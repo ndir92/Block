@@ -1,0 +1,44 @@
+{% extends 'layout/base.html'%}
+
+{% load static %}
+
+{% block title%}update_post{% endblock%}
+{% block body%}
+<h1>{{post}}</h1>
+
+
+<h1>New post</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <form action="" method="post" enctype = "multipart/form-data">
+                {% csrf_token%}
+                {% if form.subject.errors %}
+                    {% for error in form.subject.errors%}
+                        <p class="text-danger"><strong>{{ error }}</strong></p>
+                    {% endfor %}
+                {% endif%}
+        
+                {% for field in form %}
+                <div class="form-group">
+                    {{ field.label_tag}}
+                    {{ field}}
+                    {% if field.help_text %}
+                    <p class="help">{{ field.help_text}}</p>
+                    {% endif %}
+                   
+                </div>
+                {% endfor%}
+                
+                <input type="submit" class="btn btn-primary" value="New Post">
+            </form>
+
+            
+        </div>
+    
+    </div>
+    
+</div>
+
+
+{% endblock%}

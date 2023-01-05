@@ -1,0 +1,58 @@
+{% extends 'layout/base.html'%}
+
+{% load static %}
+
+{% block title %}All posts{% endblock title %}
+
+{% block body %}
+
+<div style="width:100%;">
+	<div class=" px-4 my-5 row row-cols-sm-12">
+		<div class="jumbotron text-center">
+			<div style="display: flex; width: 100%; height: 100%; color: green">
+				<h2><span> </span></h2>
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<img src="{% static '/img/about.jpg' %}" class="" width="100%" height="100%" alt="About Images">
+		</div>
+		
+		<div class="col-sm-6">
+			<div style="display: flex; color: green">
+				<h2>Plateforme de renforcements des chaines de valeurs de données infranationales<span> </span></h2>
+			</div>
+					<p class="para">
+					
+							La plupart des pays d'Afrique ont progressé au cours des dernières décennies vers la réalisation des ODD. Une grande partie des processus de suivi des progrès vers la réalisation des objectifs de développement durable se sont jusqu'à présent concentrés sur le renforcement des systèmes statistiques nationaux qui fournissent des données pour la prise de décision au niveau national. Les niveaux infranationaux de gouvernance sont des couches importantes à prendre en compte dans la réalisation des objectifs de développement au niveau national, en particulier en Afrique. C'est dans ce contexte que l'APHRC  met en œuvre un projet visant à renforcer les systèmes de données nationaux et infranationaux afin de répondre à la demande et à l'offre de données dans certaines unités infranationales. PRECVARDI est un projet qui porte sur le RENFORCEMENT DES CHAÎNES DE VALEUR DES DONNÉES INFRANATIONALES EN AFRIQUE SUBSAHARIENNE.
+		    </div>
+		
+	</div>
+</div>
+ 
+<div class="row ">
+	<!-- About Area End -->
+
+	<div>
+		<div class="shadow-lg p-1 mb-1 bg-body  container">
+			<div class=" px-4 my-5 row row-cols-sm-12">
+				<div class="col-sm-12"><div style="width: 100%; height: 100%; display: flex; justify-items: center;">
+					<iframe title="Education2" src="https://app.powerbi.com/view?r=eyJrIjoiNjM5ZjE3NzctNmI0Yy00YWVkLWFkMWMtMDJmOWEzZjNhYmU4IiwidCI6ImJmZTY0YzY0LWIwY2UtNDJiZC04MDlhLWE4ODlhMjJhZGQwOSJ9&amp;pageName=ReportSection" allowfullscreen="" width="2000" height="650" frameborder="0">
+                    </iframe>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+
+
+
+
+
+    {% endblock %}
+</div>
+
+    <footer>
+        {% include 'layout/partial/footer.html' %}
+    </footer>

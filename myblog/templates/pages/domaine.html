@@ -1,0 +1,28 @@
+{% extends 'layout/base.html'%}
+
+{% load static %}
+
+
+
+    <title>{% block title%}domaine{%endblock%}</title>
+
+
+ 
+   
+</head>
+
+
+<body >
+    <header>
+        {% include 'layout/partial/header.html' %}
+    </header>
+    <div class="body container">
+    {% block body  %}
+    
+    {% endblock %}
+</div>
+    <footer>
+        {% include 'layout/partial/footer.html' %}
+    </footer>
+</body>
+</html>
