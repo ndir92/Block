@@ -14,6 +14,7 @@ import os
 from pathlib import Path
 import django_heroku
 import dj_database_url
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -56,7 +57,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Blog.urls'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 TEMPLATES = [
     {
@@ -136,7 +137,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFIELS_DIRS=[
-    STATIC_URL =os.path.join(BASE_DIR, 'staticfiles')
+    #STATIC_URL =os.path.join(BASE_DIR, 'staticfiles')
     BASE_DIR /'static',
     ]
 
